@@ -1,3 +1,5 @@
+//go:generate stringer -type=ExitCode
+
 package main
 
 type ExitCode int
@@ -9,14 +11,4 @@ const (
 
 func (e ExitCode) Int() int {
 	return int(e)
-}
-
-func (e ExitCode) String() string {
-	switch e {
-	case Success:
-		return "Success"
-	case Fail:
-		return "Fail"
-	}
-	return "Unknown"
 }
