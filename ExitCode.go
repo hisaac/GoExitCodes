@@ -9,6 +9,6 @@ const (
 	Fail
 )
 
-func (e ExitCode) Int() int {
-	return int(e)
+func (i ExitCode) Int() int {
+	return int(i)
 }
