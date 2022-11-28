@@ -5,10 +5,6 @@ package main
 type ExitCode int
 
 const (
-	Success ExitCode = iota
-	Fail
+	Success ExitCode = 0
+	Fail    ExitCode = 1
 )
-
-func (i ExitCode) Int() int {
-	return int(i)
-}
