@@ -6,5 +6,5 @@ type ExitCode int
 
 const (
 	Success ExitCode = 0
-	Fail    ExitCode = 1
+	Failure ExitCode = 1
 )

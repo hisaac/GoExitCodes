@@ -8,11 +8,11 @@ Most of my development experience has been on Apple platforms, and this little r
 
 For example, when exiting from a CLI built in Swift, you would do something like:
 
-```swfit
+```swift
 exit(EXIT_SUCCESS)
 ```
 
-or 
+or
 
 ```swift
 exit(EXIT_FAILURE)
@@ -25,9 +25,17 @@ exit(EXIT_FAILURE)
 At its simplest, you can use `GoExitCodes` like so:
 
 ```go
+import . "github.com/hisaac/GoExitCodes/exitcode"
+
 func main() {
-	exitCode := ExitCode.Success
-	fmt.Printf("Process finished with the exit code %d (%s)", exitCode.Int(), exitCode.String())
-	os.Exit(exitCode.Int())
+	exitCode := run()
+	os.Exit(int(exitCode))
+}
+
+func run() ExitCode {
+	if err := DoSomething(); err != nil {
+		return Failure
+	}
+	return Success
 }
 ```

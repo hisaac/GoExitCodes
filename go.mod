@@ -1,3 +1,3 @@
-module GoExitCodes
+module exitcode
 
 go 1.19
